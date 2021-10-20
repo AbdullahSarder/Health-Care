@@ -13,42 +13,46 @@ import {
 import Login from './Components/Login/Login';
 import Regestration from './Components/Regestration/Regestration';
 import Appoinment from './Components/Appoinment/Appoinment';
+import Authprovider from './context/Authprovider';
 
 
 function App() {
   
   return (
     <div className="App">
-      <Router>
-      <Header></Header>
-       <Switch>
-       <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route exact path="/home" component={Home}>
-            <Home></Home>
-          </Route>
-          <Route  exact path="/About" component={About}>
-            <About></About>
-          </Route>
-          <Route  exact path="/appoinment" component={Appoinment}>
-            <Appoinment></Appoinment>
-          </Route>
-          <Route  exact path="/login" component={Login}>
-            <Login></Login>
-          </Route>
-          <Route  exact path="/regestration" component={Regestration}>
-            <Regestration></Regestration>
-          </Route>
+      <Authprovider>
+            <Router>
+            <Header></Header>
+            <Switch>
+            <Route exact path="/">
+                  <Home></Home>
+                </Route>
+                <Route exact path="/home" component={Home}>
+                  <Home></Home>
+                </Route>
+                <Route  exact path="/About" component={About}>
+                  <About></About>
+                </Route>
+                <Route  exact path="/appoinment" component={Appoinment}>
+                  <Appoinment></Appoinment>
+                </Route>
+                <Route  exact path="/login" component={Login}>
+                  <Login></Login>
+                </Route>
+                <Route  exact path="/regestration" component={Regestration}>
+                  <Regestration></Regestration>
+                </Route>
 
 
-          {/* Page Not Found */}
-          <Route exact path="*">
-            <NotFound></NotFound>
+                {/* Page Not Found */}
+                <Route exact path="*">
+                  <NotFound></NotFound>
 
-          </Route>
-        </Switch>
-      </Router>
+                </Route>
+              </Switch>
+            </Router>
+      </Authprovider>
+     
       <Footer></Footer>
 
 

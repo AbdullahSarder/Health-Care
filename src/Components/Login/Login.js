@@ -1,11 +1,11 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const{user,signInusingGoogle}=useFirebase(); 
+    const{signInusingGoogle}=useAuth(); 
     function myFunction() { 
         var x = 
         document.getElementById( 

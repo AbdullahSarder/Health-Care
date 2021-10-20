@@ -2,11 +2,11 @@ import React from 'react';
 import './Header.css'
 import { Navbar,Container,Nav,Image } from 'react-bootstrap';
 import {Link}from 'react-router-dom'
-import useFirebase from '../hooks/useFirebase';
+import useAuth from '../hooks/useAuth';
 
   
 const Header = () => {
-    const{user,logOut}=useFirebase();
+    const{user,logOut}=useAuth();
     return (
         <div className='container-fluid bg-white Topbar'>
             <Navbar collapseOnSelect expand="lg" bg="white" text="dark">
@@ -21,6 +21,10 @@ const Header = () => {
                             <Link className="p-2 text-dark" to="/department">Department</Link>
                             <Link className="p-2 text-dark" to="/appoinment">Appoinment</Link>
                             <Link className="p-2 text-dark" to="/doctors">Doctors</Link>
+
+                            <Link className="p-2 text-primary" to="/doctors">{user.displayName}</Link>
+                            <Image className="profilepicture" src={user.photoURL}></Image>
+
                         {
                             user.email?
                             // <button onClick={logOut}>Log out</button>
