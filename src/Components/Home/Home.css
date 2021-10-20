@@ -1,0 +1,90 @@
+a{
+    text-decoration: none;
+}
+h1{
+    font-weight: 700;
+    color:#223a66;
+}
+.cText{
+    color:black;
+}
+.bannerButton .nav-link{
+    /* background-color:#e12454; */
+    padding:10px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+}
+.bannerButton {
+    color:white;
+    background-color:#e12454;
+    border:none;
+    display: inline-block;
+    border-radius: 20px;
+}
+.ButtonGroup:hover{
+    background-color:#223a66;
+    color: white;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+.Card{
+    height: 300px;
+}
+.CardImg{
+    width:50px;
+}
+.cardTitle{
+    color:#223a66;
+}
+.cardText{
+    font-size: 14px;
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+.cardButton{
+    background-color: #223a66;
+    /* background-color: #e12454; */
+    padding:10px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    color: white;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+.cardButton:hover{
+    background-color:#e12454;
+    color: white;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+}
+.scheduleTime{
+ float: right;
+}
+
+@media only screen and (min-width: 700px)  {
+    .carousel-caption{
+        text-align: left;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+    }
+}
+@media only screen and (max-width: 699px)  {
+    .Carousel.Caption {
+        padding: 20px;
+    }
+     .cTitle{
+      font-size: 14px;
+    }
+     .cText{
+      font-size: 9px;
+    }
+    .bannerButton{
+        margin-top: -5px;
+    }
+    .bannerButton .nav-link{
+        /* background-color:#e12454; */
+        padding:5px;
+        border-radius: 25px;
+        font-size: 9px;
+    }
+}

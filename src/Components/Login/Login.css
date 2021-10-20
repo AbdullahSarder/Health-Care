@@ -1,0 +1,26 @@
+.bi-google{
+    text-transform: uppercase;
+	background: linear-gradient(to bottom, #EA4335 30%,#FBBC05 60%, #34A853 70%,#4285F4 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+.logn{
+    width:400px
+}
+
+@media only screen and (max-width: 719px)  {
+   .logn{
+       width:200px;
+       font-size: 12px;
+   }
+   .bi-google{
+    font-size: 12px;
+    font-weight: 200;
+     }
+     .loginform{
+         font-size: 12px;
+     }
+
+        
+}
