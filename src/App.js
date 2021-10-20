@@ -11,6 +11,7 @@ import {
   Route
 } from "react-router-dom";
 import Login from './Components/Login/Login';
+import Regestration from './Components/Regestration/Regestration';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route  exact path="/login" component={Login}>
             <Login></Login>
+          </Route>
+          <Route  exact path="/regestration" component={Regestration}>
+            <Regestration></Regestration>
           </Route>
 
 
