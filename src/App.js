@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Login from './Components/Login/Login';
 import Regestration from './Components/Regestration/Regestration';
+import Appoinment from './Components/Appoinment/Appoinment';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route  exact path="/About" component={About}>
             <About></About>
+          </Route>
+          <Route  exact path="/appoinment" component={Appoinment}>
+            <Appoinment></Appoinment>
           </Route>
           <Route  exact path="/login" component={Login}>
             <Login></Login>

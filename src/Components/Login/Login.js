@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
+import useFirebase from '../../hooks/useFirebase';
 import './Login.css'
 
 const Login = () => {
+    const{user,signInusingGoogle}=useFirebase(); 
     function myFunction() { 
         var x = 
         document.getElementById( 
@@ -21,7 +23,9 @@ const Login = () => {
                 <input className='mb-2 p-2 logn' type="password" placeholder='Password'></input><br/>
                 <input className='mb-2 p-2 btn bg-primary text-white logn' type="submit" onclick="myFunction()" value="Sign in"></input><br/>
 
-                <Button className='mb-2 p-2 bg-white text-dark logn'><i class="bi bi-google"></i>Sign in with Google</Button>
+                <Button className='mb-2 p-2 bg-white text-dark logn'
+                onClick={signInusingGoogle}
+                ><i class="bi bi-google"></i>Sign in with Google</Button>
                 <p>New at Virtual Doctors? <Link to="regestration">create an account</Link></p>
             </Form>
         </div>

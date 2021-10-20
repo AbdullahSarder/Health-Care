@@ -2,9 +2,11 @@ import React from 'react';
 import './Header.css'
 import { Navbar,Container,Nav,Image } from 'react-bootstrap';
 import {Link}from 'react-router-dom'
+import useFirebase from '../hooks/useFirebase';
 
   
 const Header = () => {
+    const{user,logOut}=useFirebase();
     return (
         <div className='container-fluid bg-white Topbar'>
             <Navbar collapseOnSelect expand="lg" bg="white" text="dark">
@@ -19,7 +21,12 @@ const Header = () => {
                             <Link className="p-2 text-dark" to="/department">Department</Link>
                             <Link className="p-2 text-dark" to="/appoinment">Appoinment</Link>
                             <Link className="p-2 text-dark" to="/doctors">Doctors</Link>
-                            <Link className='login-btn btn bg-dark text-white' to="/login">Login</Link>
+                        {
+                            user.email?
+                            // <button onClick={logOut}>Log out</button>
+                            <Link className='login-btn btn bg-primary text-white' onClick={logOut} to="/login">Logout</Link>
+                            :
+                            <Link className='login-btn btn bg-dark text-white' to="/login">Login</Link>}
 
                         </Nav>
 
