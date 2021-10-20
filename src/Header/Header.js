@@ -21,6 +21,7 @@ const Header = () => {
                             <Link className="p-2 text-dark" to="/department">Department</Link>
                             <Link className="p-2 text-dark" to="/appoinment">Appoinment</Link>
                             <Link className="p-2 text-dark" to="/doctors">Doctors</Link>
+                            <Link className="p-2 text-dark" to="/user">User</Link>
 
                             <Link className="p-2 text-primary" to="/doctors">{user.displayName}</Link>
                             <Image className="profilepicture" src={user.photoURL}></Image>
