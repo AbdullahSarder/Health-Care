@@ -1,11 +1,22 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Link, NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
     const{signInusingGoogle}=useAuth(); 
+    const location =useLocation(); 
+     const history=useHistory(); 
+     const redirect_uri=location.state?.from||'/user'
+    const handleGoogleLogin=() =>{
+        signInusingGoogle()
+        .then(result =>{
+           history.push(redirect_uri)
+        })
+    }
     function myFunction() { 
         var x = 
         document.getElementById( 
@@ -24,7 +35,7 @@ const Login = () => {
                 <input className='mb-2 p-2 btn bg-primary text-white logn' type="submit" onclick="myFunction()" value="Sign in"></input><br/>
 
                 <Button className='mb-2 p-2 bg-white text-dark logn'
-                onClick={signInusingGoogle}
+                onClick={handleGoogleLogin}
                 ><i class="bi bi-google"></i>Sign in with Google</Button>
                 <p>New at Virtual Doctors? <Link to="regestration">create an account</Link></p>
             </Form>

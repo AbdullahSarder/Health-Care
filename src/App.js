@@ -14,6 +14,10 @@ import Login from './Components/Login/Login';
 import Regestration from './Components/Regestration/Regestration';
 import Appoinment from './Components/Appoinment/Appoinment';
 import Authprovider from './context/Authprovider';
+import Department from './Components/Department/Department';
+import Doctors from './Components/Doctors/Doctors';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import User from './Components/User/User';
 
 
 function App() {
@@ -33,15 +37,25 @@ function App() {
                 <Route  exact path="/About" component={About}>
                   <About></About>
                 </Route>
-                <Route  exact path="/appoinment" component={Appoinment}>
-                  <Appoinment></Appoinment>
+                <Route  exact path="/department" component={Department}>
+                  <Department></Department>
                 </Route>
+                <PrivateRoute exact path="/appoinment" component={Appoinment}>>
+                  <Appoinment></Appoinment>
+                </PrivateRoute>
+    
+                <PrivateRoute exact path="/doctors" component={Doctors}>
+                  <Doctors></Doctors>
+                </PrivateRoute>
                 <Route  exact path="/login" component={Login}>
                   <Login></Login>
                 </Route>
                 <Route  exact path="/regestration" component={Regestration}>
                   <Regestration></Regestration>
                 </Route>
+                <PrivateRoute exact path="/user" component={User}>
+                  <User></User>
+                </PrivateRoute>
 
 
                 {/* Page Not Found */}
